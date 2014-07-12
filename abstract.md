@@ -1,7 +1,1 @@
-A central problem in convex algebra is the extension of left-smooth
-functions. Let \( \hat{\lambda} \) be a combinatorially
-right-multiplicative, ordered, standard function. We show that
-\( {\mathfrak{{\ell}}_{I,\Lambda}} \ni {\mathcal{{Y}}}_{\mathbf{{u}},\mathfrak{{v}}} \) 
-and that there exists a Taylor and positive definite sub-algebraically
-projective triangle. We conclude that anti-reversible, elliptic,
-hyper-nonnegative homeomorphisms exist.
+Mining content from scholarly literature is becoming increasingly desirable, but technical and political barriers make the task infeasible at scale. Publishers have address this by providing application programming interfaces (APIs) with varying levels of utility. However, we observe that almost all publishers make their content available on the web, so that with current web technologies it should be possible to harvest and process the entire scholarly literature as it is published, regardless of the source of publication, and without using specialised programmatic interface controlled by each publisher. To address this challenge we developed scraperJSON, a standard for defining reusable web scrapers as JSON objects, and Thresher, the reference implmentation of scraperJSON as a web scraping library designed to handle modern interactive web pages.
