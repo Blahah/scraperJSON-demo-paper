@@ -1,1 +1,1 @@
-Thresher: literature-scale mining with community-maintained collections of scraperJSON scrapers
+Thresher: literature-scale mining with community maintained collections of scraperJSON scrapers
