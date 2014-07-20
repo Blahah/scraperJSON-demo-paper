@@ -1,3 +1,3 @@
 ## **Availability**
 
-All software is available from the ContentMine github organisation: https://github.com/ContentMine.
+All software is available from the ContentMine Github organisation: https://github.com/ContentMine.
