@@ -22,4 +22,4 @@ When scraping the scholarly literature, it is usually of interest to download fi
 
 Content associated with a page is often available in a more extensive form in a linked resource. This is observed with full figures on the websites of many acadmic publishers, where a thumbnail is displayed in the article and a link must be followed to expose the full image. This situation can be handled in scraperJSON: if an element targets a URL, the URL can be followed and one or more child elements extracted.
 
-A scraperJSON scraper demonstrating all the described features is shown in figure 1, along with the results of an example scraping operation.
+A scraperJSON scraper demonstrating all the described features is shown in figure 1, along with the results of an example scraping operation. The scraperJSON specification is available on Github: https://github.com/ContentMine/scraperJSON.
