@@ -1,22 +1,25 @@
 ## scraperJSON
-We begin by considering a simple special case. Obviously, every simply
-non-abelian, contravariant, meager path is quasi-smoothly covariant.
-Clearly, if \(\alpha \ge \aleph_0\) then \({ \beta_{\lambda}} = e''\). 
-Because \(\bar{\mathfrak{{\ell}}} \ne {Q_{{K},w}}\) , if \(\Delta\)
-is diffeomorphic to \(F\) then \(k'\) is contra-normal, intrinsic and
-pseudo-Volterra. Therefore if \({ J_{j,\varphi}}\) is stable then
-Kronecker’s criterion applies. On the other hand,
+We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code. A scraperJSON scraper consists of a JSON object with a minimum of two keys:
 
-\[\eta = \frac{\pi^{1/2}m_e^{1/2}Ze^2 c^2}{\gamma_E 8 (2k_BT)^{3/2}}\ln\Lambda \approx 7\times10^{11}\ln\Lambda \;T^{-3/2} \,{\rm cm^2}\,{\rm s}^{-1}\]
+* ***url***: an array of regular expressions specifying the sites to which the scraper can apply
+* ***elements***: an object specifying the elements to be extracted
 
-Since \(\iota\) is stochastically \(n\)-dimensional and semi-naturally
-non-Lagrange, \(\mathbf{{i}} ( \mathfrak{{h}}'' ) = \infty\).  Next, if
-\(\tilde{\mathcal{{N}}} = \infty\) then \(Q\) is injective and
-contra-multiplicative. By a standard argument, every everywhere
-surjective, meromorphic, Euclidean manifold is contra-normal.
-This could shed important
-light on a conjecture of Einstein
+*Elements* are objects specifying either a selector or one or more child elements, and optionally an attribute and some configuration. *Selectors* may be CSS, XPath, or follow the Open Annotation standard. This simple system allows for the capture of the majority of metadata from scholarly articles.
 
-> We dance for laughter, we dance for tears, we dance for madness, we
-> dance for fears, we dance for hopes, we dance for screams, we are the
-> dancers, we create the dreams. — A. Einstein
+### Simulating user interaction
+
+Many modern websites do not specify their content in the raw HTML served when a URL is visited, but lazy-load the content, for example by making AJAX calls. These loading events are triggered by user interactions such as scrolling and clicking. To enable to scraping of full content, we therefore added the ability to specify user interactions to scraperJSON. 
+
+### Structuring results
+
+The structure of the scraperJSON *elements* object defines the structure of the results. Thus, each key in the *elements* of the scraper will be reflected as a key in the *elements* of the results. Elements can contain other elements, so that the results of the child elements are grouped into objects reflecting the structure of the parent element. This allows powerful capture of structured data, such as objects representing authors.
+
+### Downloads
+
+When scraping the scholarly literature, it is usually of interest to download files such as fulltext PDFs and HTML, XML and RDF documents where available, as well as capture of full-sized figure images and supplementary materials. This feature is supported in scraperJSON. Elements specifying URLs can have their target(s) downloaded using the *download* key. The value of *download* can be boolean or an object. If the value is an object, it can specify how the downloaded files should be renamed.
+
+### Nested scrapers
+
+Content associated with a page is available in a more extensive form. This is observed with full figures on the websites of many acadmic publishers, where a thumbnail is displayed in the article and a link must be followed to expose the full image. To handle this situation in scraperJSON, if an element targets a URL, the URL can be followed and one or more child elements extracted.
+
+A scraperJSON scraper demonstrating all the described features is shown in figure 1, along with the results of an example scraping operation.
