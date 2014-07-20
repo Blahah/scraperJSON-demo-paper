@@ -1,1 +1,0 @@
-The ContentMine scraping stack: literature-scale content mining with community maintained collections of declarative scrapers
