@@ -1,1 +1,3 @@
+## Journal scrapers
+
 We developed a collection of scraperJSON scrapers for major publishers (https://github.com/ContentMine/journal-scrapers). Maintenance and expansion of the collection is done with the help of a fast-growing community of volunteers. Each scraper is associated with a list of URLs for which the expected scraping results are known, and an automated testing system (using Github and Travis CI integration) checks that all the scrapers are functioning every day and after every change to a scraper.
