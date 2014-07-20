@@ -69,7 +69,7 @@ Because much of the scholarly literature is behind a pay-wall, thresher allows a
 
 ***quickscrape*** is a cross-platform command-line suite that provides access to all the functionality of thresher. An overview of the interaction of the two systems is shown in figure 1.
 
-![**quickscrape** provides a command-line interface to the **thresher** library, allowing users to specify inputs and settings and retrieve results. **thresher** drives the scraping process by matching URLs to scraperJSON scrapers, rendering the target, and capturing the specified elements..](./figures/figure_1/overview.png)
+![Schematic overview of the scraping stack. **quickscrape** provides a command-line interface to the **thresher** library, allowing users to specify inputs and settings and retrieve results. **thresher** drives the scraping process by matching URLs to those in the collection of scraperJSON scrapers, rendering the target, and capturing the specified elements.](./figures/figure_1/overview.png)
 
 ## **Journal scrapers**
 
