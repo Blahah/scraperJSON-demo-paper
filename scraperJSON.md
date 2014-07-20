@@ -1,9 +1,9 @@
 ## scraperJSON
-We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code. A scraperJSON scraper minimally defines the url(s) to which it applies and the set of elements that it can extract. Elements can be extracted by CSS, XPath, or using the Open Annotation standard, and can be post-processed using regular expression capture groups.
+We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code (https://github.com/ContentMine/scraperJSON). A scraperJSON scraper minimally defines the url(s) to which it applies and the set of elements that it can extract. Elements can be extracted by CSS, XPath, or using the Open Annotation standard, and can be post-processed using regular expression capture groups.
 
 ### Simulating user interaction
 
-Many modern websites do not specify their content in the raw HTML served when a URL is visited, but lazy-load the content, for example by making AJAX calls. These loading events are triggered by user interactions such as scrolling and clicking. To enable to scraping of full content, we therefore added the ability to specify a list of predefined user interactions to scraperJSON. 
+Many modern websites do not specify their content in the raw HTML served when a URL is visited, but lazy-load the content, for example by making AJAX calls. These loading events are triggered by user interactions such as scrolling and clicking. To enable to scraping of full content, we therefore added to scraperJSON the ability to specify a list of predefined user interactions. 
 
 ### Structuring results
 
@@ -11,7 +11,7 @@ The structure of the scraperJSON *elements* object defines the structure of the 
 
 ### Downloads
 
-When scraping the scholarly literature, it is usually of interest to download files such as fulltext PDFs and HTML, XML and RDF documents where available, and to capture full-sized figure images and supplementary materials. This feature is supported in scraperJSON. Elements specifying URLs can have their target(s) downloaded and optionally renamed to a specified format.
+When scraping the scholarly literature, it is usually of interest to download files such as fulltext PDFs and HTML, XML and RDF documents where available, and to capture full-sized figure images and supplementary materials. This feature is supported in scraperJSON: elements specifying URLs can have their target(s) downloaded and optionally renamed to a specified format.
 
 ### Nested scrapers
 
