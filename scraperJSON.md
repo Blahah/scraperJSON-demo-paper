@@ -12,14 +12,14 @@ Many modern websites do not specify their content in the raw HTML served when a 
 
 ### Structuring results
 
-The structure of the scraperJSON *elements* object defines the structure of the results. Thus, each key in the *elements* of the scraper will be reflected as a key in the *elements* of the results. Elements can contain other elements, so that the results of the child elements are grouped into objects reflecting the structure of the parent element. This allows powerful capture of structured data, such as objects representing authors.
+The structure of the scraperJSON *elements* object defines the structure of the results. Thus, each key in the *elements* of the scraper will be reflected as a key in the *elements* of the results. Elements can contain other elements, so that the results of the child elements are grouped into objects reflecting the structure of the parent element. This allows powerful capture of structured data representing entities and their properties, such as the name, affiliation and email of an author.
 
 ### Downloads
 
-When scraping the scholarly literature, it is usually of interest to download files such as fulltext PDFs and HTML, XML and RDF documents where available, as well as capture of full-sized figure images and supplementary materials. This feature is supported in scraperJSON. Elements specifying URLs can have their target(s) downloaded using the *download* key. The value of *download* can be boolean or an object. If the value is an object, it can specify how the downloaded files should be renamed.
+When scraping the scholarly literature, it is usually of interest to download files such as fulltext PDFs and HTML, XML and RDF documents where available, and to capture full-sized figure images and supplementary materials. This feature is supported in scraperJSON. Elements specifying URLs can have their target(s) downloaded and optionally renamed to a specified format.
 
 ### Nested scrapers
 
-Content associated with a page is available in a more extensive form. This is observed with full figures on the websites of many acadmic publishers, where a thumbnail is displayed in the article and a link must be followed to expose the full image. To handle this situation in scraperJSON, if an element targets a URL, the URL can be followed and one or more child elements extracted.
+Content associated with a page is often available in a more extensive form in a linked resource. This is observed with full figures on the websites of many acadmic publishers, where a thumbnail is displayed in the article and a link must be followed to expose the full image. This situation can be handled in scraperJSON: if an element targets a URL, the URL can be followed and one or more child elements extracted.
 
 A scraperJSON scraper demonstrating all the described features is shown in figure 1, along with the results of an example scraping operation.
