@@ -2,7 +2,7 @@ The need to mine content from the scholarly literature at scale is inhibited by 
 
 * scraperJSON, a standard for defining reusable web scrapers as JSON objects
 * thresher, a web scraping library that uses scraperJSON scrapers and headless browsing to handle many idiosyncrasies of the modern web
-* quickscrape, a command-line web scraping suite that uses Thresher
+* quickscrape, a command-line web scraping suite that uses thresher
 * a library of scraperJSON scrapers to extract data and metadata from many academic publishers
 
 We will demonstrate the use of this stack for scraping the scholarly literature.
