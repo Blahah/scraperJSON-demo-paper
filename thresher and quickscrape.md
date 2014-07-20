@@ -14,7 +14,7 @@ Headless browsers are the standalone web rendering engines with the GUI removed,
 
 #### Rate-limiting
 
-To encourage responsible scraping, and to avoid triggering denial of service by publishers, thresher implements a domain-based rate limit. A separate queue of URLs to be scraped is maintained for each domain, and the queues are processed in parallel.
+To encourage responsible scraping, and to avoid triggering denial of service by publishers, thresher implements a domain-based, customisable rate limit. A separate queue of URLs to be scraped is maintained for each domain, and the queues are processed in parallel.
 
 #### Authentication
 
