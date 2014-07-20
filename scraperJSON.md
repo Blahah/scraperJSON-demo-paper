@@ -1,14 +1,9 @@
 ## scraperJSON
-We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code. A scraperJSON scraper consists of a JSON object with a minimum of two keys:
-
-* ***url***: an array of regular expressions specifying the sites to which the scraper can apply
-* ***elements***: an object specifying the elements to be extracted
-
-*Elements* are objects specifying either a selector or one or more child elements, and optionally an attribute and some configuration. *Selectors* may be CSS, XPath, or follow the Open Annotation standard. This simple system allows for the capture of the majority of metadata from scholarly articles.
+We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code. A scraperJSON scraper minimally defines the url(s) to which it applies and the set of elements that it can extract. Elements can be extracted by CSS, XPath, or using the Open Annotation standard, and can be post-processed using regular expression capture groups.
 
 ### Simulating user interaction
 
-Many modern websites do not specify their content in the raw HTML served when a URL is visited, but lazy-load the content, for example by making AJAX calls. These loading events are triggered by user interactions such as scrolling and clicking. To enable to scraping of full content, we therefore added the ability to specify user interactions to scraperJSON. 
+Many modern websites do not specify their content in the raw HTML served when a URL is visited, but lazy-load the content, for example by making AJAX calls. These loading events are triggered by user interactions such as scrolling and clicking. To enable to scraping of full content, we therefore added the ability to specify a list of predefined user interactions to scraperJSON. 
 
 ### Structuring results
 
