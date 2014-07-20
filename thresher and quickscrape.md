@@ -22,6 +22,4 @@ Because much of the scholarly literature is behind a pay-wall, thresher allows a
 2. using a proxy
 3. by providing a set of session cookies
 
-## quickscrape
-
 ***quickscrape*** (http://github.com/ContentMine/quickscrape) is a cross-platform command-line suite that provides access to all the functionality of thresher.
