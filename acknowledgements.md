@@ -1,2 +1,2 @@
 # Acknowledgements
-PM-R thanks The Shuttleworth Foundation for a fellowship and grant.
+PM-R thanks the Shuttleworth Foundation for a fellowship and grant.
