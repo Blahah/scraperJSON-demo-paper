@@ -1,1 +1,1 @@
-ScraperJSON: literature-scale mining with community maintained collections of declarative scrapers
+ScraperJSON: literature-scale content mining with community maintained collections of declarative scrapers
