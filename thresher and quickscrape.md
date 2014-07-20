@@ -10,7 +10,7 @@ By harnessing the url specification in scraperJSON, thresher can process lists o
 
 #### Headless rendering
 
-Headless browsers are Thresher supports the optional user interaction feature in scraperJSON by rendering webpages and performing actions in PhantomJS, a headless WebKit browser, if interactions are specified.
+Headless browsers are the standalone web rendering engines with the GUI removed, commonly used for testing web-facing software. Thresher supports the optional user interaction feature in scraperJSON by rendering webpages and performing actions in PhantomJS, a headless WebKit browser, if interactions are specified.
 
 #### Rate-limiting
 
