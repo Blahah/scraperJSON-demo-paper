@@ -26,4 +26,4 @@ Because much of the scholarly literature is behind a pay-wall, thresher allows a
 
 ### quickscrape
 
-***quickscrape*** (http://github.com/ContentMine/quickscrape) is a cross-platform command-line suite that provides access to all the functionality of thresher.
+***quickscrape*** is a cross-platform command-line suite that provides access to all the functionality of thresher.
