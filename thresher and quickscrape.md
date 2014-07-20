@@ -2,7 +2,7 @@
 
 ### thresher
 
-***thresher*** (http://github.com/ContentMine/) is a web scraping library that uses scraperJSON scrapers. It is written in Node.js, is cross-platform, is fully covered by tests, and is released under the MIT license.
+***thresher*** is a web scraping library that uses scraperJSON scrapers. It is written in Node.js, is cross-platform, is fully covered by tests, and is released under the MIT license.
 
 #### Automatic scraper selection
 
