@@ -1,15 +1,15 @@
----  
+---
 title: "The ContentMine scraping stack: literature-scale content mining with community maintained collections of declarative scrapers"
 author:
 - name: Richard Smith-Unna
   affiliation: University of Cambridge
 - name: Peter Murray-Rust
   affiliation: University of Cambridge
----  
+---
 
 # Introduction
 
-The need to mine content from the scholarly literature at scale is inhibited by technical and political barriers. Publishers have partially addressed this by providing application programming interfaces (APIs). However, we observe that many publisher APIs come with unrealistic restrictions, and that while only a few publishers provide APIs, almost all publishers make their content available on the web. With current web technologies it should be possible to harvest and mine the entire scholarly literature as it is published, regardless of the source of publication, and without using specialised programmatic interfaces controlled by each publisher. To address this challenge as part of the ContentMine project (http://contentmine.org) we developed the following tools:
+The need to mine content from the scholarly literature at scale is inhibited by technical and political barriers. Publishers have partially addressed this by providing application programming interfaces (APIs). However, we observe that many publisher APIs come with restrictions that inhibit data mining at scale, and that while only a few publishers provide APIs, almost all publishers make their content available on the web. With current web technologies it should be possible to harvest and mine the entire scholarly literature as it is published, regardless of the source of publication, and without using specialised programmatic interfaces controlled by each publisher. To address this challenge as part of the ContentMine project (http://contentmine.org) we developed the following tools:
 
 * **scraperJSON**, a standard for defining reusable web scrapers as JSON objects
 * **thresher**, a web scraping library that uses scraperJSON scrapers and headless browsing to handle many idiosyncrasies of the modern web
@@ -21,7 +21,18 @@ We will demonstrate the use of this stack for scraping the scholarly literature.
 # Software description
 
 ## **scraperJSON**
+
 We defined a new JSON schema, scraperJSON, to enable declarative scraping of structured data from many different sites without duplicating code. A scraperJSON scraper minimally defines the url(s) to which it applies and the set of elements that it can extract. Elements can be extracted by CSS, XPath, or using the Open Annotation standard, and can be post-processed using regular expression capture groups.
+
+### Implementation
+
+We chose to use JSON as the data format because it is widely supported and is the natural data format of JavaScript, in which our web apps and scraping software are written (via Node.js).
+
+The declarative approach enables building tools to enable non-programmers to create and maintain scrapers. This is prohibitively difficult with existing scraper collections, such as that used by the open source reference-manager Zotero.
+
+### Related work
+
+To our knowledge, only one open-source declarative scraping system, libKrake (http://github.com/KrakeIO/libkrake), exists. However, this software seems to no longer be maintained and did not support many of the features we require, such as simulated interactions and file downloads.
 
 ### Simulating user interaction
 
@@ -43,7 +54,15 @@ Content associated with a page is often available in a more extensive form in a 
 
 ### thresher
 
+#### Implementation
+
 ***thresher*** is a web scraping library that uses scraperJSON scrapers. It is written in Node.js, is cross-platform, is fully covered by tests, and is released under the MIT license.
+
+JavaScript was selected as the development langauge because it is the de-facto language of the web. Node.js in particular allows seamless creation of APIs, command-line tools and GUI tools or webapps using the same codebase, and because the ecosystem of packages simplifies rapid cross-platform development.
+
+Pages are rendered either using the Node.js package **jsdom**, or in a headless WebKit browser via PhantomJS. PhantomJS was selected over alternatives, such as Selenium WebDriver, due to the requirement that our scraping stack can run on servers without any X windowing system.
+
+The output of each scraping operation is a JSON document that mirrors the structure of the scraper's scraperJSON definition. The format is bibJSON-compatible, allowing conversion to other scholarly metadata standards.
 
 #### Automatic scraper selection
 
@@ -51,7 +70,7 @@ By harnessing the url specification in scraperJSON, thresher can process lists o
 
 #### Headless rendering
 
-Headless browsers are the standalone web rendering engines with the GUI removed, commonly used for testing web-facing software. Thresher supports the optional user interaction feature in scraperJSON by rendering webpages and performing actions in PhantomJS, a headless WebKit browser, if interactions are specified.
+Headless browsers are standalone web rendering engines with the GUI removed, commonly used for testing web-facing software. Thresher supports the optional user interaction feature in scraperJSON by rendering webpages and performing actions in PhantomJS if interactions are specified.
 
 #### Rate-limiting
 
@@ -73,7 +92,11 @@ Because much of the scholarly literature is behind a pay-wall, thresher allows a
 
 ## **Journal scrapers**
 
-We developed a collection of scraperJSON scrapers for major publishers. The scrapers collect article metadata, downloadable resources associated with the article, as well as citations and the full text of the article if available. Maintenance and expansion of the collection is done with the help of a community of volunteers. Each scraper is associated with a list of URLs for which the expected scraping results are known, and an automated testing system (using Github and Travis CI integration) checks that all the scrapers are functioning (i.e. extracting the expected results) every day and after every change to a scraper. This allows rapid response to formatting changes by publishers. Accessory scripts are provided for automatically generating tests for scrapers, and for running the tests. The whole collection is released under the CC0 license.
+We developed a collection of scraperJSON scrapers for major publishers. The scrapers collect article metadata, downloadable resources associated with the article, as well as citations and the full text of the article if available. Maintenance and expansion of the collection is done with the help of a community of volunteers. Each scraper is associated with a list of URLs for which the expected scraping results are known, and an automated testing system (using Github and Travis CI integration) checks that all the scrapers are functioning with perfect precision and recall (i.e. extracting the expected results) every day and after every change to a scraper. This allows a rapid community response to formatting changes by publishers. Accessory scripts are provided for automatically generating tests for scrapers, and for running the tests. The whole collection is released under the CC0 license.
+
+## **Future work**
+
+In future work we will enhance the ContentMine scraping stack by creating a layer of web tools enabling non-programmers to develop and maintain scrapers, and to conduct text and data mining directly from the browser using our resources.
 
 ## **Availability**
 
